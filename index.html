@@ -1,1 +1,464 @@
-placeholder
+<title>Nail Stories London</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --ground:#F6F2EE;
+    --raised:#FFFFFF;
+    --ink:#1B1517;
+    --ink-soft:#6E6265;
+    --line:#E4DAD4;
+    --rose:#B65C6A;
+    --rose-soft:#E8CFD2;
+    --plum:#2B1E23;
+    --gold:#A98B5D;
+
+    --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+    --ui:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#181114;
+      --raised:#221A1E;
+      --ink:#F2E9E7;
+      --ink-soft:#A2908F;
+      --line:#382A2F;
+      --rose:#E08B97;
+      --rose-soft:#4A2F35;
+      --plum:#F2E9E7;
+      --gold:#C9A876;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#181114;
+    --raised:#221A1E;
+    --ink:#F2E9E7;
+    --ink-soft:#A2908F;
+    --line:#382A2F;
+    --rose:#E08B97;
+    --rose-soft:#4A2F35;
+    --plum:#F2E9E7;
+    --gold:#C9A876;
+  }
+
+  *{box-sizing:border-box}
+
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--ui);
+    font-size:16px;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:88px;
+  }
+
+  .wrap{width:100%;max-width:1060px;margin:0 auto;padding-inline:20px}
+
+  .eyebrow{
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------------- hero ---------------- */
+  header{padding-block:52px 40px}
+
+  .wordmark{
+    font-family:var(--display);
+    font-weight:400;
+    line-height:.82;
+    letter-spacing:-.02em;
+    margin:26px 0 0;
+  }
+  .wordmark .l1{
+    display:block;
+    font-size:clamp(66px,19vw,188px);
+    text-transform:uppercase;
+  }
+  .wordmark .l2{
+    display:block;
+    font-style:italic;
+    font-size:clamp(58px,17vw,168px);
+    color:var(--rose);
+    margin-left:.06em;
+  }
+  .wordmark .l3{
+    display:block;
+    font-family:var(--ui);
+    font-size:clamp(12px,2.6vw,17px);
+    font-weight:400;
+    letter-spacing:.52em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:22px;
+  }
+
+  .stars{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:10px 16px;
+    margin-top:38px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+  }
+  .score{
+    font-family:var(--display);
+    font-size:46px;
+    line-height:1;
+    color:var(--ink);
+  }
+  .glyphs{color:var(--gold);font-size:17px;letter-spacing:.14em}
+  .stars .said{color:var(--ink-soft);font-size:14.5px}
+
+  .intro{
+    font-family:var(--display);
+    font-size:clamp(23px,4.6vw,34px);
+    line-height:1.28;
+    max-width:19ch;
+    margin:34px 0 0;
+    text-wrap:balance;
+  }
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 26px;
+    border-radius:2px;
+    font-family:var(--ui);
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:1px solid var(--ink);
+    background:var(--ink);
+    color:var(--ground);
+    transition:opacity .18s ease,background .18s ease,color .18s ease;
+  }
+  .btn:hover{opacity:.84}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--ground);opacity:1}
+  .btn:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+  /* ---------------- sections ---------------- */
+  section{padding-block:62px;border-top:1px solid var(--line)}
+
+  h2{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(40px,10vw,86px);
+    line-height:.96;
+    letter-spacing:-.02em;
+    margin:18px 0 0;
+    text-wrap:balance;
+  }
+  h2 em{font-style:italic;color:var(--rose)}
+
+  .lede{color:var(--ink-soft);max-width:48ch;margin:22px 0 0;font-size:16.5px}
+
+  /* ---------------- treatments ---------------- */
+  .menu{margin-top:44px;border-top:1px solid var(--line)}
+  .item{
+    display:flex;
+    align-items:baseline;
+    gap:18px;
+    padding:22px 2px;
+    border-bottom:1px solid var(--line);
+  }
+  .item .no{
+    font-family:var(--ui);
+    font-size:11px;
+    letter-spacing:.16em;
+    color:var(--rose);
+    flex:none;
+    width:30px;
+    padding-top:6px;
+  }
+  .item .body{flex:1;min-width:0}
+  .item h3{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(26px,5.6vw,38px);
+    line-height:1.1;
+    margin:0;
+    letter-spacing:-.01em;
+  }
+  .item p{margin:7px 0 0;color:var(--ink-soft);font-size:15.5px;line-height:1.55;max-width:52ch}
+
+  .ask{
+    margin-top:30px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    letter-spacing:.02em;
+  }
+  .ask strong{color:var(--ink);font-weight:500}
+
+  /* ---------------- shade wall ---------------- */
+  .shades{
+    margin-top:42px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(104px,1fr));
+    gap:14px;
+  }
+  .shade{text-align:center}
+  .chip{
+    aspect-ratio:1/1.32;
+    border-radius:60% 60% 52% 52% / 34% 34% 66% 66%;
+    box-shadow:inset 0 -9px 18px rgba(0,0,0,.14), inset 0 7px 12px rgba(255,255,255,.42);
+    max-width:100%;
+  }
+  .shade span{
+    display:block;
+    margin-top:11px;
+    font-size:10.5px;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .c1{background:linear-gradient(150deg,#F0D9D6,#D9AEA9)}
+  .c2{background:linear-gradient(150deg,#C9737F,#8E3F51)}
+  .c3{background:linear-gradient(150deg,#E9E2DA,#C6B8A9)}
+  .c4{background:linear-gradient(150deg,#D8DEE4,#9AA7B4)}
+  .c5{background:linear-gradient(150deg,#6E4A5C,#33202B)}
+  .c6{background:linear-gradient(150deg,#F5EDE2,#E3CFA8)}
+  .c7{background:linear-gradient(150deg,#B9C7B4,#7E9079)}
+  .c8{background:linear-gradient(150deg,#EAC9D8,#C58FB0)}
+
+  /* ---------------- branches ---------------- */
+  .branches{
+    margin-top:44px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(272px,1fr));
+    gap:18px;
+  }
+  .branch{
+    background:var(--raised);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:30px 26px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .branch .tag{
+    font-size:10.5px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--rose);
+    margin:0 0 14px;
+  }
+  .branch h3{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(30px,6vw,42px);
+    line-height:1.02;
+    margin:0 0 16px;
+    letter-spacing:-.01em;
+  }
+  .branch address{
+    font-style:normal;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.6;
+    margin-bottom:6px;
+  }
+  .branch .tel{
+    font-size:16px;
+    letter-spacing:.04em;
+    margin:0 0 22px;
+  }
+  .branch .tel a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .branch .tel a:hover{border-color:var(--rose);color:var(--rose)}
+  .branch .btn{margin-top:auto;width:100%}
+
+  /* ---------------- footer ---------------- */
+  footer{border-top:1px solid var(--line);padding-block:44px 52px}
+  .footmark{
+    font-family:var(--display);
+    font-size:clamp(34px,8vw,58px);
+    line-height:1;
+    margin:0 0 20px;
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+  }
+  .footmark em{font-style:italic;color:var(--rose);text-transform:none}
+  footer p{margin:0 0 6px;color:var(--ink-soft);font-size:14.5px}
+  footer a{color:var(--ink-soft)}
+
+  /* ---------------- sticky bar ---------------- */
+  .bar{
+    position:fixed;left:0;right:0;bottom:0;
+    background:var(--ground);
+    border-top:1px solid var(--line);
+    padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));
+    z-index:30;
+  }
+  .bar-in{
+    max-width:1060px;margin:0 auto;
+    display:flex;align-items:center;gap:12px;
+  }
+  .bar .label{
+    flex:1;min-width:0;
+    font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--ink-soft);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .bar .btn{padding:13px 20px;flex:none;font-size:11px}
+
+  @media (max-width:560px){
+    .bar .label{display:none}
+    .bar .btn{flex:1;padding:13px 8px}
+    .cta-row .btn{flex:1 1 100%}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Hackney Road &middot; Bethnal Green Road</p>
+
+    <h1 class="wordmark">
+      <span class="l1">Nail</span>
+      <span class="l2">Stories</span>
+      <span class="l3">London</span>
+    </h1>
+
+    <div class="stars">
+      <span class="score">4.8</span>
+      <span class="glyphs">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="said">453 Google reviews across both salons</span>
+    </div>
+
+    <p class="intro">Two salons in East London. One standard.</p>
+
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/447719912119">WhatsApp Hackney Road</a>
+      <a class="btn ghost" href="https://wa.me/447749747368">WhatsApp Bethnal Green</a>
+    </div>
+  </header>
+
+  <section>
+    <p class="eyebrow">Treatments</p>
+    <h2>What we <em>do</em>.</h2>
+    <p class="lede">Every set is built for your nails &mdash; shape, length and finish decided in the chair, not off a menu board.</p>
+
+    <div class="menu">
+      <div class="item">
+        <span class="no">01</span>
+        <div class="body">
+          <h3>Gel X Extensions</h3>
+          <p>Full-cover soft gel tips. Light, strong and applied in one piece &mdash; the fastest route to length without damage.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="no">02</span>
+        <div class="body">
+          <h3>Builder Gel &amp; BIAB</h3>
+          <p>Applied straight over the natural nail to add strength and an apex. For growing your own nails out properly.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="no">03</span>
+        <div class="body">
+          <h3>Cat Eye &amp; Chrome</h3>
+          <p>Magnetic cat eye and mirror chrome finishes. The ones that photograph best and the ones we get asked for most.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="no">04</span>
+        <div class="body">
+          <h3>French &amp; Side Tip</h3>
+          <p>Classic french, coloured tips, side-swept lines. Hand-painted, never stickers.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="no">05</span>
+        <div class="body">
+          <h3>Ombr&eacute; &amp; Nail Art</h3>
+          <p>Blends, polka dots, florals, freehand detail. Bring a picture and we will work from it.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="no">06</span>
+        <div class="body">
+          <h3>Diamonds &amp; Gems</h3>
+          <p>Stones, charms and 3D detail set by hand, from one accent nail to a full set.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="ask"><strong>Prices</strong> &mdash; message either salon on WhatsApp and we will tell you straight, before you book.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">The shade wall</p>
+    <h2>Pick your <em>colour</em>.</h2>
+    <p class="lede">A working wall of gels at both salons. These are the families people choose from most.</p>
+
+    <div class="shades">
+      <div class="shade"><div class="chip c1"></div><span>Soft Pink</span></div>
+      <div class="shade"><div class="chip c2"></div><span>Deep Rose</span></div>
+      <div class="shade"><div class="chip c3"></div><span>Nude</span></div>
+      <div class="shade"><div class="chip c4"></div><span>Chrome</span></div>
+      <div class="shade"><div class="chip c5"></div><span>Cat Eye</span></div>
+      <div class="shade"><div class="chip c6"></div><span>Champagne</span></div>
+      <div class="shade"><div class="chip c7"></div><span>Sage</span></div>
+      <div class="shade"><div class="chip c8"></div><span>Lilac</span></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Find us</p>
+    <h2>Two <em>salons</em>.</h2>
+    <p class="lede">Both in E2, ten minutes apart. Message whichever suits you &mdash; same team, same standard.</p>
+
+    <div class="branches">
+      <div class="branch">
+        <p class="tag">Salon One</p>
+        <h3>Hackney Road</h3>
+        <address>397 Hackney Road<br>London E2 8PP</address>
+        <p class="tel"><a href="tel:+447719912119">07719 912119</a></p>
+        <a class="btn" href="https://wa.me/447719912119">Message this salon</a>
+      </div>
+
+      <div class="branch">
+        <p class="tag">Salon Two</p>
+        <h3>Bethnal Green Road</h3>
+        <address>151 Bethnal Green Road<br>London E2 7DG</address>
+        <p class="tel"><a href="tel:+447749747368">07749 747368</a></p>
+        <a class="btn" href="https://wa.me/447749747368">Message this salon</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footmark">Nail <em>Stories</em></p>
+    <p>397 Hackney Road, London E2 8PP &middot; 07719 912119</p>
+    <p>151 Bethnal Green Road, London E2 7DG &middot; 07749 747368</p>
+    <p style="margin-top:14px">Instagram &mdash; <a href="https://instagram.com/nailstories397">@nailstories397</a> &middot; <a href="https://instagram.com/nailstories.shoreditch">@nailstories.shoreditch</a></p>
+    <p style="margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;opacity:.75">Design concept by Hamza Khan &mdash; an unofficial proposal, not a Nail Stories website.</p>
+  </footer>
+
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <span class="label">Book by WhatsApp</span>
+    <a class="btn" href="https://wa.me/447719912119">Hackney Rd</a>
+    <a class="btn ghost" href="https://wa.me/447749747368">Bethnal Grn</a>
+  </div>
+</div>
